@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
 	[SerializeField] Text turnText;
 	[SerializeField] Text clearText;
 	[SerializeField] Image clearTextBackground;
+	[SerializeField] Color markedFrameColor;
 
 	int frameSize = 100;
 	GameObject[,] frameObjects;
@@ -57,10 +58,10 @@ public class GameManager : MonoBehaviour
 					if(winner == 1)
 					{
 						clearText.text = "Red win";
-						clearText.color = Color.red;
+						clearText.color = firstPlayerColor;
 					}else{
 						clearText.text = "Yellow win";
-						clearText.color = Color.yellow;
+						clearText.color = secondPlayerColor;
 					}
 					finished = true;
 					clearText.enabled = true;
@@ -81,9 +82,9 @@ public class GameManager : MonoBehaviour
 		circle.transform.localPosition = new Vector3((col - cols / 2.0f + 0.5f) * frameSize, (rows / 2.0f - 0.5f) * frameSize, 0);
 
 		if(player == 1){
-			circle.GetComponent<Renderer>().material.color = Color.red;
+			circle.GetComponent<Renderer>().material.color = firstPlayerColor;
 		}else{
-			circle.GetComponent<Renderer>().material.color = Color.yellow;
+			circle.GetComponent<Renderer>().material.color = secondPlayerColor;
 		}
 
 		Circle obj = circle.GetComponent<Circle>();
@@ -98,7 +99,6 @@ public class GameManager : MonoBehaviour
 
 
 		int[][] wonPosition = new int[4][];
-		Debug.Log(wonPosition);
 
 		// check horizontal
 		for(int i = 0; i < rows; i++)
@@ -115,7 +115,14 @@ public class GameManager : MonoBehaviour
 						won = false;
 					}
 				}
-				if(won) return winner;
+				if(won)
+				{
+					// Change frame color
+					for(int k = 0; k < 4; k++){
+						markFrame(i, j + k);
+					} 
+					return winner;
+				}
 			}
 		}
 
@@ -126,7 +133,6 @@ public class GameManager : MonoBehaviour
 			{
 				int winner = circleStatus[i, j];
 				if(winner == 0) continue;
-				Debug.Log(winner);
 				bool won = true;
 				for(int k = 1; k < 4; k++)
 				{
@@ -135,7 +141,14 @@ public class GameManager : MonoBehaviour
 						won = false;
 					}
 				}
-				if(won) return winner;
+				if(won)
+				{
+					// Change frame color
+					for(int k = 0; k < 4; k++){
+						markFrame(i + k, j);
+					} 
+					return winner;
+				}
 			}
 		}
 
@@ -146,7 +159,6 @@ public class GameManager : MonoBehaviour
 			{
 				int winner = circleStatus[i, j];
 				if(winner == 0) continue;
-				Debug.Log(winner);
 				bool won = true;
 				for(int k = 1; k < 4; k++)
 				{
@@ -155,7 +167,14 @@ public class GameManager : MonoBehaviour
 						won = false;
 					}
 				}
-				if(won) return winner;
+				if(won)
+				{
+					// Change frame color
+					for(int k = 0; k < 4; k++){
+						markFrame(i + k, j + k);
+					} 
+					return winner;
+				}
 			}
 		}
 
@@ -166,7 +185,6 @@ public class GameManager : MonoBehaviour
 			{
 				int winner = circleStatus[i, j];
 				if(winner == 0) continue;
-				Debug.Log(winner);
 				bool won = true;
 				for(int k = 1; k < 4; k++)
 				{
@@ -175,12 +193,24 @@ public class GameManager : MonoBehaviour
 						won = false;
 					}
 				}
-				if(won) return winner;
+				if(won)
+				{
+					// Change frame color
+					for(int k = 0; k < 4; k++){
+						markFrame(i + k, j - k);
+					} 
+					return winner;
+				}
 			}
 		}
 
 
 		return 0;
+	}
+
+	private void markFrame(int row, int col)
+	{
+		frameObjects[row, col].GetComponent<Image>().color = markedFrameColor;
 	}
 
 
@@ -234,10 +264,10 @@ public class GameManager : MonoBehaviour
 	private void displayTurn(){
 		if(activePlayer == 1){
 			turnText.text = "Red turn";
-			turnText.color = Color.red;
+			turnText.color = firstPlayerColor;
 		}else{
 			turnText.text = "Yellow turn";
-			turnText.color = Color.yellow;
+			turnText.color = secondPlayerColor;
 		}
 	}
 }
