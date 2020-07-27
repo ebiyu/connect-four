@@ -12,13 +12,13 @@ public class GameManager : MonoBehaviour
 	[SerializeField] GameObject circlePrefab;
 	[SerializeField] Transform frameParent;
 	[SerializeField] Transform circleParent;
-	[SerializeField] int frameSize = 100;
 	[SerializeField] int width = 1024;
 	[SerializeField] int height = 768;
 	[SerializeField] Color firstPlayerColor;
 	[SerializeField] Color secondPlayerColor;
 	[SerializeField] Text turnText;
 
+	int frameSize = 100;
 	GameObject[,] frameObjects;
 	GameObject[,] circleObjects;
 	int[,] circleStatus;
@@ -91,6 +91,7 @@ public class GameManager : MonoBehaviour
 
 	public void initialize()
 	{
+		frameSize = 350 / rows;
 		frameObjects = new GameObject[rows, cols];
 		circleObjects = new GameObject[rows, cols];
 		circleStatus = new int[rows, cols];

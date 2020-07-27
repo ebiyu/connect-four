@@ -155,8 +155,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 333}
-  m_SizeDelta: {x: 457.30798, y: 85.745255}
+  m_AnchoredPosition: {x: 0, y: 213}
+  m_SizeDelta: {x: 272.24878, y: 98.08255}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &349665099
 MonoBehaviour:
@@ -178,7 +178,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 29b1df405eb24534d8e18dfd17355e9e, type: 3}
     m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
@@ -235,7 +235,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.6509434, g: 0.3947218, b: 0.08904416, a: 0}
+  m_BackGroundColor: {r: 0.9150943, g: 0.70215654, b: 0.4963955, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -333,7 +333,6 @@ MonoBehaviour:
     type: 3}
   frameParent: {fileID: 2091958635}
   circleParent: {fileID: 2091958635}
-  frameSize: 100
   width: 1024
   height: 768
   firstPlayerColor: {r: 0, g: 0, b: 0, a: 0}
@@ -396,7 +395,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 29b1df405eb24534d8e18dfd17355e9e, type: 3}
     m_FontSize: 37
     m_FontStyle: 0
     m_BestFit: 0
@@ -619,7 +618,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 387, y: -335}
+  m_AnchoredPosition: {x: 307, y: -212}
   m_SizeDelta: {x: 218.36047, y: 64.65152}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2134786343
