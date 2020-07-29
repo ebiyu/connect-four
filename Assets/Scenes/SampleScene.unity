@@ -433,11 +433,12 @@ MonoBehaviour:
   circleParent: {fileID: 2091958635}
   width: 1024
   height: 768
-  firstPlayerColor: {r: 0, g: 0, b: 0, a: 0}
-  secondPlayerColor: {r: 0, g: 0, b: 0, a: 0}
+  firstPlayerColor: {r: 1, g: 0.18564281, b: 0, a: 1}
+  secondPlayerColor: {r: 1, g: 0.9891, b: 0.18396229, a: 1}
   turnText: {fileID: 349665099}
   clearText: {fileID: 1355656879}
   clearTextBackground: {fileID: 1986834106}
+  markedFrameColor: {r: 0.6981132, g: 0.6981132, b: 0.6981132, a: 1}
 --- !u!1 &1036505022
 GameObject:
   m_ObjectHideFlags: 0
